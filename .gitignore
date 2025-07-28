@@ -8,10 +8,8 @@ env/
 sales-dashboard-etl-d0bcba00378f.json
 
 # Ignore default service-account JSON and any named for this project
-
 sheets-service.json
-sales-dashboard.json
-sheets-service.json
+sales-dashboard*.json
 
 # Python bytecode and caches
 
