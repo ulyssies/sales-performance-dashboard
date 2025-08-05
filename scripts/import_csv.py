@@ -2,18 +2,16 @@ import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-# -----------------------
 # Configuration
-# -----------------------
+
 RAW_CSV_PATH = "data/raw/global_superstore.csv"
 CLEAN_CSV_PATH = "data/processed/global_superstore_cleaned.csv"
 SPREADSHEET_NAME = "Sales Performance Data"
 WORKSHEET_NAME = "raw_data"
 SERVICE_ACCOUNT_FILE = "sheets-service.json"
 
-# -----------------------
 # Helper Functions
-# -----------------------
+
 def read_and_clean_csv(path: str) -> pd.DataFrame:
     """
     Read the raw CSV, parse dates, convert to strings, and add Year/Month helper columns.
@@ -63,10 +61,8 @@ def push_to_sheets(df: pd.DataFrame):
     worksheet.update(data)
     print(f"✅ Updated '{WORKSHEET_NAME}' in '{SPREADSHEET_NAME}' successfully!")
 
-
-# -----------------------
 # Main Execution
-# -----------------------
+
 if __name__ == "__main__":
     # 1. Read and clean
     df = read_and_clean_csv(RAW_CSV_PATH)
