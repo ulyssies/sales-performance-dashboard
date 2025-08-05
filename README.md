@@ -4,9 +4,7 @@ A full-stack analytics pipeline that transforms raw sales data (`global_supersto
 
 ## 🔗 Live Dashboard
 
-👉 [View the Tableau Dashboard on Tableau Public](https://public.tableau.com/views/SalesDashboard_17543609469410/Dashboard1)
-
-![Dashboard Preview](./docs/dashboard-preview.png)
+[View the Tableau Dashboard on Tableau Public](https://public.tableau.com/views/SalesDashboard_17543609469410/Dashboard1)
 
 ---
 
