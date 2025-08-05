@@ -1,26 +1,38 @@
-# Sales Performance Dashboard
+# 📊 Sales Performance Dashboard
 
-**Overview**
-An end-to-end analytics pipeline that ingests raw sales data (`global_superstore.csv`), applies cleaning and transformations (Year/Month columns), and publishes the results to a Google Sheet. A live connection from Tableau Public visualizes key KPIs (revenue, profit, time series, regional comparisons).
+A full-stack analytics pipeline that transforms raw sales data (`global_superstore.csv`) into interactive business insights. The pipeline cleans and loads the data into Google Sheets, which is live-linked to a Tableau dashboard for visualization. The final dashboard is embedded via GitHub Pages.
 
-**Tech Stack**
+## 🔗 Live Dashboard
 
-* Data & ETL: Python (pandas, gspread, oauth2client), Google Sheets API, Google Drive API
-* Storage: Google Sheets (ETL backend)
-* Visualization: Tableau Public
-* Hosting: GitHub Pages (embed Tableau)
+👉 [View the Tableau Dashboard on Tableau Public](https://public.tableau.com/views/SalesDashboard_17543609469410/Dashboard1)
 
-**Prerequisites**
+![Dashboard Preview](./docs/dashboard-preview.png)
 
-1. Python 3.x installed
-2. A Google Cloud service account key (JSON) with Sheets & Drive API enabled and shared with the target Sheet
-3. Google Sheet named **Sales Performance Data**, shared with your service account email
+---
 
-**Setup & Run**
+## ⚙️ Tech Stack
+
+**ETL Pipeline**
+- Python (pandas, gspread, oauth2client)
+- Google Sheets API + Drive API
+
+**Storage**
+- Google Sheets (as cleaned data source)
+
+**Visualization**
+- Tableau Public (live-connected to Google Sheets)
+- Dashboard includes KPIs, sales trends, forecasts, maps, and product/category breakdowns
+
+**Hosting**
+- GitHub Pages (with optional HTML embed)
+
+---
+
+## 🚀 Setup & Run (ETL Pipeline)
 
 ```bash
 # 1. Clone the repo
-git clone git@github.com:YOUR_USERNAME/sales-performance-dashboard.git
+git clone https://github.com/YOUR_USERNAME/sales-performance-dashboard.git
 cd sales-performance-dashboard
 
 # 2. Create & activate a virtual environment
@@ -30,16 +42,12 @@ source .venv/bin/activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Place your service-account JSON in the project root (ignored by Git)
-#    e.g. sheets-service.json or sales-dashboard.json
+# 4. Place your Google service-account JSON in the project root (git-ignored)
+#    e.g. sheets-service.json
 
-# 5. Run the import script to push cleaned data into Google Sheets
+# 5. Push cleaned data into the connected Google Sheet
 python scripts/import_csv.py
-```
 
-**Project Structure**
-
-```
 sales-performance-dashboard/
 ├── .gitignore
 ├── README.md
@@ -54,15 +62,16 @@ sales-performance-dashboard/
 ├── tableau/
 │   └── dashboard.twbx
 ├── web/
-│   └── index.html
+│   └── index.html            # optional GitHub Pages embed
 └── docs/
+    ├── dashboard-preview.png
     ├── KPIs.md
     └── wireframes/
-```
 
-**Next Steps**
+Credits
+Data: Global Superstore
 
-1. Build and refine Pivot Tables in Google Sheets for QA.
-2. Connect Tableau Public to the live Sheet and design interactive dashboards.
-3. Automate ETL scheduling (cron or Cloud Function).
-4. Embed and document on GitHub Pages.
+Visualizations: Built using Tableau Public
+
+Author: Ulyssies Adams
+
