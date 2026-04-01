@@ -1,56 +1,84 @@
-# 📊 Sales Performance Dashboard
+<div align="center">
 
-A full-stack analytics pipeline that transforms raw sales data (`global_superstore.csv`) into interactive business insights. The pipeline cleans and loads the data into Google Sheets, which is live-linked to a Tableau dashboard for visualization. The final dashboard is embedded via GitHub Pages.
+<br />
 
-## 🔗 Live Dashboard
+```
+███████╗ █████╗ ██╗     ███████╗███████╗
+██╔════╝██╔══██╗██║     ██╔════╝██╔════╝
+███████╗███████║██║     █████╗  ███████╗
+╚════██║██╔══██║██║     ██╔══╝  ╚════██║
+███████║██║  ██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+```
 
-[View the Tableau Dashboard on Tableau Public](https://public.tableau.com/views/SalesDashboard_17543609469410/Dashboard1)
+### Sales Performance Dashboard
+
+**An end-to-end analytics pipeline that transforms raw retail data into interactive business insights.**
+
+[![Live Dashboard](https://img.shields.io/badge/View_Dashboard-Tableau_Public-6366f1?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/views/SalesDashboard_17543609469410/Dashboard1)
+[![Python](https://img.shields.io/badge/Python-3.11-6366f1?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Google Sheets](https://img.shields.io/badge/Google_Sheets-API-6366f1?style=for-the-badge&logo=googlesheets&logoColor=white)](https://developers.google.com/sheets)
+[![Tableau](https://img.shields.io/badge/Tableau-Public-6366f1?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com)
+
+<br />
+
+</div>
 
 ---
 
-## ⚙️ Tech Stack
+## Overview
 
-**ETL Pipeline**
-- Python (pandas, gspread, oauth2client)
-- Google Sheets API + Drive API
-
-**Storage**
-- Google Sheets (as cleaned data source)
-
-**Visualization**
-- Tableau Public (live-connected to Google Sheets)
-- Dashboard includes KPIs, sales trends, forecasts, maps, and product/category breakdowns
-
-**Hosting**
-- GitHub Pages (with optional HTML embed)
+Raw sales data from Global Superstore is cleaned and pushed into Google Sheets via a Python ETL pipeline. Google Sheets acts as a live data source for a Tableau dashboard that surfaces KPIs, regional trends, product performance, and sales forecasts — all embedded and accessible via GitHub Pages.
 
 ---
 
-## 🚀 Setup & Run (ETL Pipeline)
+## Tech Stack
+
+| Layer | Tools |
+|---|---|
+| ETL | Python, pandas, gspread |
+| Storage | Google Sheets API, Drive API |
+| Visualization | Tableau Public |
+| Hosting | GitHub Pages |
+
+---
+
+## Features
+
+- Automated ETL pipeline — cleans and loads raw CSV into Google Sheets
+- Live Tableau connection — dashboard updates when data changes
+- KPIs, sales trends, forecasts, regional maps, and category breakdowns
+- Embedded dashboard via GitHub Pages
+
+---
+
+## Getting Started
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/sales-performance-dashboard.git
+# Clone the repo
+git clone https://github.com/ulyssies/sales-performance-dashboard.git
 cd sales-performance-dashboard
 
-# 2. Create & activate a virtual environment
+# Create and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# 3. Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 4. Place your Google service-account JSON in the project root (git-ignored)
-#    e.g. sheets-service.json
+# Add your Google service account key to the project root
+# File should be named sheets-service.json (already git-ignored)
 
-# 5. Push cleaned data into the connected Google Sheet
+# Run the pipeline
 python scripts/import_csv.py
+```
 
+---
+
+## Project Structure
+
+```
 sales-performance-dashboard/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── sheets-service.json      # your JSON key (git-ignored)
 ├── data/
 │   ├── raw/
 │   │   └── global_superstore.csv
@@ -60,16 +88,24 @@ sales-performance-dashboard/
 ├── tableau/
 │   └── dashboard.twbx
 ├── web/
-│   └── index.html            # optional GitHub Pages embed
-└── docs/
-    ├── dashboard-preview.png
-    ├── KPIs.md
-    └── wireframes/
+│   └── index.html
+├── docs/
+│   ├── dashboard-preview.png
+│   └── KPIs.md
+├── requirements.txt
+└── README.md
+```
 
-Credits
-Data: Global Superstore
+---
 
-Visualizations: Built using Tableau Public
+## Data
 
-Author: Ulyssies Adams
+Source dataset: [Global Superstore](https://www.kaggle.com/datasets/apoorvaappz/global-super-store-dataset) — retail transactions across regions, categories, and customer segments.
 
+---
+
+<div align="center">
+
+*Built by [Ulyssies Adams](https://ulyssies.github.io/personal-website)*
+
+</div>
